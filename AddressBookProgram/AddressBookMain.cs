@@ -26,24 +26,24 @@ namespace AddressBookProgram
         }
         static void CreateContacts()
         {
-            Console.WriteLine("Enter First Name");
+            Console.WriteLine("Enter First Name:-");
             string firstName = Console.ReadLine();
-            Console.WriteLine("Enter Second Name");
+            Console.WriteLine("Enter Second Name:-");
             string secondName = Console.ReadLine();
-            Console.WriteLine("Enter Address");
+            Console.WriteLine("Enter Address:-");
             string address = Console.ReadLine();
-            Console.WriteLine("Enter City");
+            Console.WriteLine("Enter City:-");
             string city = Console.ReadLine();
-            Console.WriteLine("Enter State");
+            Console.WriteLine("Enter State:-");
             string state = Console.ReadLine();
-            Console.WriteLine("Enter Zip");
+            Console.WriteLine("Enter Zip:-");
             int zip = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Phone Number");
-            int phoneNo = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Email Id");
+            Console.WriteLine("Enter Phone Number:-");
+            long phoneNo = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Email Id:-");
             string email = Console.ReadLine();
             Contacts conObj = new Contacts(firstName, secondName, address, city, state, zip, phoneNo, email);
-            Console.WriteLine("Contact has been Created");
+            Console.WriteLine("Contact has been Created..!!");
             Console.ReadLine();
         }
     }
@@ -55,9 +55,9 @@ namespace AddressBookProgram
         public string city;
         public string state;
         public int zip;
-        public int phoneNo;
+        public long phoneNo;
         public string email;
-        public Contacts(string firstName, string secondName, string address, string city, string state, int zip, int phoneNo, string email)
+        public Contacts(string firstName, string secondName, string address, string city, string state, int zip, long phoneNo, string email)
         {
             this.firstName = firstName;
             this.secondName = secondName;
