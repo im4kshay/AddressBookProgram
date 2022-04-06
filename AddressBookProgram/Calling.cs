@@ -10,7 +10,7 @@ namespace AddressBookProgram
     {
         public static void CallingAddressBook()
         {
-            Console.WriteLine("Enter 1 to Add Contact\nEnter 2 to Edit Contact\nEnter 3 to Exit");
+            Console.WriteLine("Enter 1 to Add Contact\nEnter 2 to Edit Contact\nEnter 3 to Delete Person From Contact\nEnter 4 to Exit");
             int key = Convert.ToInt32(Console.ReadLine());
             switch (key)
             {
@@ -23,12 +23,15 @@ namespace AddressBookProgram
                     Calling.CallingAddressBook();
                     break;
                 case 3:
+                    Contacts.DeleteContact();
+                    Calling.CallingAddressBook();
+                    break;
+                case 4:
                     break;
                 default:
                     Console.WriteLine("Try Again. Wrong key");
                     Calling.CallingAddressBook();
                     break;
-
             }
         }
     }
