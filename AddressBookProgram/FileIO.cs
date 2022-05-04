@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CsvHelper;
+using Newtonsoft.Json;
 
 namespace AddressBookProgram
 {
@@ -13,6 +12,7 @@ namespace AddressBookProgram
     {
         string path = @"C:\Users\Akshay\OneDrive\Desktop\DotNetPractice\AddressBookProgram\AddressBookProgram\AddBook.txt";
         string csvpath = @"C:\Users\Akshay\OneDrive\Desktop\DotNetPractice\AddressBookProgram\AddressBookProgram\AddBook.csv";
+        string jsonpath = @"C:\Users\Akshay\OneDrive\Desktop\DotNetPractice\AddressBookProgram\AddressBookProgram\AddBook.json";
         public void WriteUsingStreamWriter(Dictionary<string, List<Contact>> addressBookDict)
         {
             int count = 1;
@@ -65,6 +65,25 @@ namespace AddressBookProgram
                 }
             }
             Console.WriteLine("File Read Successfully");
+        }
+        public void WriteInJsonFile(Dictionary<string, List<Contact>> addressBookDict)
+        {
+            string res = JsonConvert.SerializeObject(addressBookDict);
+            File.WriteAllText(jsonpath, res);
+            Console.WriteLine("File Written Successfully");
+        }
+        public void ReadJsonFile()
+        {
+            string data = File.ReadAllText(jsonpath);
+            Dictionary<string, List<Contact>> addbook = JsonConvert.DeserializeObject<Dictionary<string, List<Contact>>>(data);
+            foreach (KeyValuePair<string, List<Contact>> user in addbook)
+            {
+                Console.WriteLine("\nName of Address Book: " + user.Key);
+                foreach (Contact contact in user.Value)
+                {
+                    Console.WriteLine(contact);
+                }
+            }
         }
     }
 }
