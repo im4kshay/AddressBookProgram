@@ -39,12 +39,21 @@ namespace AddressBookProgram
                 Console.WriteLine("Enter your Email-ID: ");
                 string email = Console.ReadLine();
 
-                Contact personDetail = new Contact(firstName, lastName, address, city, state, zipcode, phoneNumber, email);
                 if (CheckIfAlreadyPresent(firstName, lastName))
                     Console.WriteLine("Already exist");
                 else
                 {
-                    contactList.Add(personDetail);
+                    contactList.Add(new Contact()
+                    {
+                        firstName = firstName,
+                        lastName = lastName,
+                        address = address,
+                        city = city,
+                        state = state,
+                        zipcode = zipcode,
+                        email = email,
+                        phoneNumber = phoneNumber
+                    });
                 }
             }
             return contactList;
@@ -270,6 +279,11 @@ namespace AddressBookProgram
         {
             FileIO file = new FileIO();
             file.WriteUsingStreamWriter(addressBookDict);
+        }
+        public void WriteCsvFile()
+        {
+            FileIO file = new FileIO();
+            file.WriteInCsvFile(addressBookDict);
         }
     }
 }
