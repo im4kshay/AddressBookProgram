@@ -8,6 +8,7 @@ namespace AddressBookProgram
 {
     class AddressBookSystem
     {
+        public static Dictionary<string, AddressBook> addressBookDict = new Dictionary<string, AddressBook>();
         static void Main(string[] args)
         {
             Console.WriteLine("=-=-=-=-=-=-=-=Welcome to address book system=-=-=-=-=-=-=-=");
@@ -15,8 +16,8 @@ namespace AddressBookProgram
             AddressBook addressBook = new AddressBook();
 
             Console.WriteLine("Please choose an option:");
-            Console.WriteLine("1. View Contact \n2. Add New Contact(s) \n3. Edit Contact \n4: Delete Contact " +
-                "\n5: Add Multiple Addressbook\n6: Exit\n");
+            Console.WriteLine("1: View Contact \n2: Add New Contact(s) \n3: Edit Contact \n4: Delete Contact " +
+                "\n5: Add Multiple Addressbook\n6: Find person in city/state\n7: Exit\n");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -46,6 +47,9 @@ namespace AddressBookProgram
                     addressBook.ViewContact();
                     break;
                 case 6:
+                    addressBook.SearchPersonInCityOrState();
+                    break;
+                case 7:
                     Environment.Exit(0);
                     break;
                 default:
@@ -54,7 +58,5 @@ namespace AddressBookProgram
             }
             Console.ReadLine();
         }
-
-
     }
 }
