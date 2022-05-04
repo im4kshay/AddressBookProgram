@@ -6,50 +6,47 @@ using System.Threading.Tasks;
 
 namespace AddressBookProgram
 {
-    class Program
+    class AddressBookSystem
     {
         static void Main(string[] args)
         {
             Console.WriteLine("=-=-=-=-=-=-=-=Welcome to address book system=-=-=-=-=-=-=-=");
 
-            AddressBookManagement addressBook = new AddressBookManagement();
-            
-            Console.WriteLine("==============================================================");
-            
+            AddressBook addressBook = new AddressBook();
 
-            //Operations on Address Book System
             Console.WriteLine("Please choose an option:");
-            Console.WriteLine("1.)Add New Contact\n2.)View Contact\n3.)Edit Contact by finding name\n4.)Delete Contact\n5.)Add Address Book");
+            Console.WriteLine("1. View Contact \n2. Add New Contact(s) \n3. Edit Contact \n4: Delete Contact " +
+                "\n5: Add Multiple Addressbook\n6: Exit\n");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
                 case 1:
-                    Console.Write("Enter the number of contact list to be added : ");
-                    int number = Convert.ToInt32(Console.ReadLine());
-                    for (int index = 0; index < number; index++)
-                    {
-                        addressBook.AddNewContact();
-                    }
                     addressBook.ViewContact();
                     break;
                 case 2:
-
+                    addressBook.AddNewContact();
                     addressBook.ViewContact();
                     break;
                 case 3:
-                    Console.WriteLine("Enter the first name : ");
-                    string firstName = Console.ReadLine();
-                    addressBook.EditContact(firstName);
+                    Console.WriteLine("\nEnter First name to edit it's contact details");
+                    string input = Console.ReadLine();
+                    addressBook.EditContact(input);
+                    addressBook.ViewContact();
                     break;
                 case 4:
-                    Console.WriteLine("Enter the First Name & Last Name : ");
+                    Console.WriteLine("\nEnter First name to delete it's contact details");
                     string fName = Console.ReadLine();
+                    Console.WriteLine("Enter last name to delete it's contact details");
                     string lName = Console.ReadLine();
-                    addressBook.DeletePersonContact(fName, lName);
+                    addressBook.DeleteContact(fName, lName);
+                    addressBook.ViewContact();
                     break;
                 case 5:
                     addressBook.AddNewAddressBook();
                     addressBook.ViewContact();
+                    break;
+                case 6:
+                    Environment.Exit(0);
                     break;
                 default:
                     Console.WriteLine("Invalid Input!");

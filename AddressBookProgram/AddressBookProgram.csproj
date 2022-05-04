@@ -43,8 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddressBookManagement.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="AddressBook.cs" />
+    <Compile Include="IContact.cs" />
+    <Compile Include="AddressBookSystem.cs" />
     <Compile Include="Contacts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

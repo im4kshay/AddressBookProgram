@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AddressBookProgram
 {
-    public class Contacts
+    class Contact
     {
         public string firstName;
         public string lastName;
@@ -17,7 +17,7 @@ namespace AddressBookProgram
         public long phoneNumber;
         public string email;
 
-        public Contacts(string firstName, string lastName, string address, string city, string state, int zipcode, long phoneNumber, string email)
+        public Contact(string firstName, string lastName, string address, string city, string state, int zipcode, long phoneNumber, string email)
         {
             this.firstName = firstName;
             this.lastName = lastName;
@@ -28,9 +28,5 @@ namespace AddressBookProgram
             this.phoneNumber = phoneNumber;
             this.email = email;
         }
-
-
-
-
     }
 }
