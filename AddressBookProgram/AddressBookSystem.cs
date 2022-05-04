@@ -17,7 +17,7 @@ namespace AddressBookProgram
 
             Console.WriteLine("Please choose an option:");
             Console.WriteLine("1: View Contact \n2: Add New Contact(s) \n3: Edit Contact \n4: Delete Contact " +
-                "\n5: Add Multiple Addressbook\n6: Find person in city/state\n7: View person in city/state\n8: Exit\n");
+                "\n5: Add Multiple Addressbook\n6: Find person in city/state\n7: View person in city/state\n8: Count by city/state\n9: Exit\n");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -53,6 +53,10 @@ namespace AddressBookProgram
                     addressBook.ViewPersonInCityOrState();
                     break;
                 case 8:
+                    addressBook.AddNewAddressBook();
+                    addressBook.CountByCityOrState();
+                    break;
+                case 9:
                     Environment.Exit(0);
                     break;
                 default:
