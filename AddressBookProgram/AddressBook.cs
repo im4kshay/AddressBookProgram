@@ -266,5 +266,10 @@ namespace AddressBookProgram
             }
             ViewAddressBook();
         }
+        public void WriteFile()
+        {
+            FileIO file = new FileIO();
+            file.WriteUsingStreamWriter(addressBookDict);
+        }
     }
 }

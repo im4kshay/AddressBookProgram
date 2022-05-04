@@ -1,0 +1,6 @@
+﻿﻿Name of AddressBookCollege
+
+Person 1
+ FirstName: Rahul LastName: Sayre City: Jabalpur State: MP Address: Ahinsa Chowk zipCode: 482002 PhoneNo: 9584858998 Email: rahulsayre7@gmail.com
+Person 2
+ FirstName: Anuj LastName: Pandey City: Indore State: MP Address: Vijay Nagar zipCode: 482001 PhoneNo: 7999837990 Email: anujpandey7@gmail.com
