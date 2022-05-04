@@ -8,7 +8,6 @@ namespace AddressBookProgram
 {
     class AddressBookSystem
     {
-        public static Dictionary<string, AddressBook> addressBookDict = new Dictionary<string, AddressBook>();
         static void Main(string[] args)
         {
             Console.WriteLine("=-=-=-=-=-=-=-=Welcome to address book system=-=-=-=-=-=-=-=");
