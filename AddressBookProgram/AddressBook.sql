@@ -73,3 +73,8 @@ create procedure spUpdateContacts
 as
 update AddressBook set City=@City where FirstName=@FirstName;
 update AddressBook set Zip=@Zip where FirstName=@FirstName;
+
+--added Date_added column
+alter table AddressBook add Date_Added date not null default getdate();
+update AddressBook set Date_Added = '2019-02-10' where FirstName='Manali';
+update AddressBook set Date_Added = '2019-02-10' where FirstName='Anuj';
