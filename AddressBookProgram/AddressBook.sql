@@ -62,3 +62,14 @@ values('Akshay','Sayre','Ahinsa Chowk','Jabalpur','MP',482002,7999837990,'akshay
 ('Akshay','Sayre','Ahinsa Chowk','Jabalpur','MP',482002,7999837990,'akshaysayre@gmail.com','Family');
 
 select * from AddressBook;
+
+--Update Contact details on DB
+create procedure spUpdateContacts
+(
+@FirstName varchar(100),
+@City varchar(100),
+@Zip  bigint
+)
+as
+update AddressBook set City=@City where FirstName=@FirstName;
+update AddressBook set Zip=@Zip where FirstName=@FirstName;
